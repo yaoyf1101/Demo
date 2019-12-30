@@ -2,6 +2,7 @@ package com.yaoyifei.demo.fragment;
 
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yaoyifei.demo.MainActivity;
 import com.yaoyifei.demo.R;
@@ -93,6 +95,9 @@ public class EditTextAndTextViewFragment extends BlankFragment {
                 String str = "name:"+name.getText().toString()+", pwd_number:"+pwd_number.getText().toString()+", pwd_text:"+pwd_text.getText().toString();
                 tv_show.setVisibility(View.VISIBLE);
                 tv_show.setText(str);
+                Toast toast = Toast.makeText(getContext(), str, Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.TOP,0,0);
+                toast.show();
             }
         });
         return rootView;
